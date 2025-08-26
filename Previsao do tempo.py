@@ -8,7 +8,8 @@ while True:
     if city_name.strip().lower() == 'sair':
         print('Saindo...')
         break
-
+    
+    #Pegando as informaçao na api
     url = f'https://wttr.in/{city_name}?format=j1&lang=pt'
     
     link = requests.get(url)
