@@ -14,7 +14,7 @@ while True:
     
     link = requests.get(url)
     dados = link.json()
-
+    #Logica
     if link.status_code == 200:
         temperatura = dados['current_condition'][0]['temp_C']
         sensacao_termica = dados['current_condition'][0]['FeelsLikeC']
@@ -26,6 +26,6 @@ while True:
         print(f'Humidade: {humidade}%')
         print(f'Descriçao: {descricao}')
     else:
-        print('Erro na conexão dos dados')
+        print(f'Erro na conexão dos dados erro {link.status_code}')
     
     input("\nPressione Enter para consultar outra cidade ou digite Ctrl+C para sair...")
